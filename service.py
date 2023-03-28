@@ -24,6 +24,12 @@ def update_record(id, alias, first_name, last_name, email_address, employee_leve
     database.run_query(query)
     return "The record has been changed to fit the new details you entered"
 
+# defining a function to delete a record in the database table by its id number
+def del_record(user_id_no):
+    query = f"DELETE FROM phonetool WHERE user_id_no = {user_id_no};"
+    database.run_query(query)
+    return "The employee record you have choosen has been removed"
+
 def update_db():
     print("Table has been updated")
     return database.commit_changes()

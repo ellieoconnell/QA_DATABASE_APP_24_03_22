@@ -17,6 +17,8 @@ def start_app():
         if choice == "4":
             print(change_record())
         if choice == "5":
+            print(del_single_record())
+        if choice == "6":
             confirm_update()
             database.commit_changes()
             sys.exit("Goodbye for now!")
@@ -53,6 +55,11 @@ def change_record():
     ai2 = input("Has the employee now left the AI2 program? or have they just joined it? True or False: ")
     return service.update_record(record_id, shortname, first, last, email, level, years, ai2)
 
+# defining a function for when a user selecrs option 5
+def del_single_record():
+    id = input("Please enter the id of the record you would like to delete: ")
+    return service.del_record(id)
+
 # menu displayed when requests are made to the db
 menu = (
     """
@@ -61,7 +68,8 @@ menu = (
     2. Enter a new record 
     3. Read one record by id number
     4. Update a record by id number
-    5. Exit
+    5. Delete one record by id number
+    6. Exit
     """
 )
 
