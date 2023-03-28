@@ -1,6 +1,7 @@
 import service
 import database
 
+# defining the while loop that loops through all the menu options 
 def start_app():
     print(menu)
     exit = False
@@ -12,9 +13,12 @@ def start_app():
             exit = True
             database.commit_changes()
 
+# defining the all orders function for when the use selects option 1
+# uses the function definined in the service file
 def all_orders():
     return service.get_all()
 
+# menu displayed when requests are made to the db
 menu = (
     """
     Welcome to the Phone Tool! Please select a choice.
