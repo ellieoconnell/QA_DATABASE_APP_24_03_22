@@ -15,12 +15,6 @@ def run_query(query):
     data = cursor.execute(query).fetchall()
     return data 
 
-# defining the check all records function that reads all the data from the db upon request 
-def check_all_records():
-    query = "SELECT * FROM phonetool;"
-    data = run_query(query)
-    return data
-
 # defining function to commit all changes to the db when a request is made
 def commit_changes():
     conn.commit()
@@ -28,3 +22,4 @@ def commit_changes():
 # run the set_up_table function once to create the table, when run successfully make sure to comment it out like below
 #set_up_table()
 commit_changes()
+
