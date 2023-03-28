@@ -18,6 +18,12 @@ def get_one_record(user_id_no):
     print("Below is the employee you requested by id number")
     return database.run_query(query)
 
+# defining a function to alter records already in the database table by its id number
+def update_record(id, alias, first_name, last_name, email_address, employee_level, years_of_employment, in_the_AI2_program):
+    query = f"UPDATE phonetool SET alias = '{alias}', first_name = '{first_name}', last_name = '{last_name}', email_address = '{email_address}', employee_level = {employee_level}, years_of_employment = {years_of_employment}, in_the_AI2_program = {in_the_AI2_program} WHERE user_id_no = {id};"
+    database.run_query(query)
+    return "The record has been changed to fit the new details you entered"
+
 def update_db():
     print("Table has been updated")
     return database.commit_changes()

@@ -13,8 +13,10 @@ def start_app():
         if choice == "2":
             print(input_record())
         if choice == "3":
-            print(one_order())
+            print(one_record())
         if choice == "4":
+            print(change_record())
+        if choice == "5":
             confirm_update()
             database.commit_changes()
             sys.exit("Goodbye for now!")
@@ -31,13 +33,25 @@ def input_record():
     email = input("Please enter the email address of the new employee: ")
     level = input("Please enter the level of the new employee: ")
     years = input("Please enter how many years the employee has been with Amazon: ")
-    ai2 = input("Is the employee in the AI2 program? True or False?: ")
+    ai2 = input("Is the employee in the AI2 program? True or False: ")
     return service.create_single_record(shortname, first, last, email, level, years, ai2)
 
 # defines a function for when user selects option 3
-def one_order():
+def one_record():
     id = input("Please enter the id of the employee you would like you see: ")
     return service.get_one_record(id)
+
+# defining a function when a user selects option 4 
+def change_record():
+    record_id = input("Please enter the id of the record you would like to update: ")
+    shortname = input("Please enter the new alias of the employee for this record: ")
+    first = input("Please enter the new name of the employee for this record: ")
+    last = input("Please enter the new last name of the employee for this record: ")
+    email = input("Please enter the new email address of the employee for this record: ")
+    level = input("Please enter the new level of the employee for this record: ")
+    years = input("Please enter the new amount of years the employee has been with Amazon: ")
+    ai2 = input("Has the employee now left the AI2 program? or have they just joined it? True or False: ")
+    return service.update_record(record_id, shortname, first, last, email, level, years, ai2)
 
 # menu displayed when requests are made to the db
 menu = (
@@ -45,8 +59,9 @@ menu = (
     Welcome to the Phone Tool! Please select a choice.
     1. Read all entries
     2. Enter a new record 
-    3. Read one order by id number
-    4. Exit
+    3. Read one record by id number
+    4. Update a record by id number
+    5. Exit
     """
 )
 
