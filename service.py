@@ -12,6 +12,12 @@ def create_single_record(alias, first_name, last_name, email_address, employee_l
     database.run_query(query)
     return "The new employee has been recorded!"
 
+# defining a function to read a single record by its id number 
+def get_one_record(user_id_no):
+    query = f"SELECT * FROM phonetool WHERE user_id_no = {user_id_no};"
+    print("Below is the employee you requested by id number")
+    return database.run_query(query)
+
 def update_db():
     print("Table has been updated")
     return database.commit_changes()

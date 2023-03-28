@@ -13,12 +13,13 @@ def start_app():
         if choice == "2":
             print(input_record())
         if choice == "3":
+            print(one_order())
+        if choice == "4":
             confirm_update()
             database.commit_changes()
             sys.exit("Goodbye for now!")
 
 # defining the all orders function for when the user selects option 1
-# uses the function definined in the service file
 def all_orders():
     return service.get_all()
 
@@ -33,13 +34,19 @@ def input_record():
     ai2 = input("Is the employee in the AI2 program? True or False?: ")
     return service.create_single_record(shortname, first, last, email, level, years, ai2)
 
+# defines a function for when user selects option 3
+def one_order():
+    id = input("Please enter the id of the employee you would like you see: ")
+    return service.get_one_record(id)
+
 # menu displayed when requests are made to the db
 menu = (
     """
     Welcome to the Phone Tool! Please select a choice.
     1. Read all entries
     2. Enter a new record 
-    3. Exit
+    3. Read one order by id number
+    4. Exit
     """
 )
 
