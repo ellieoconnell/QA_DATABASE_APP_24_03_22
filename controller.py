@@ -19,6 +19,8 @@ def start_app():
         if choice == "5":
             print(del_single_record())
         if choice == "6":
+            print(del_all_records())
+        if choice == "7":
             confirm_update()
             database.commit_changes()
             sys.exit("Goodbye for now!")
@@ -60,6 +62,15 @@ def del_single_record():
     id = input("Please enter the id of the record you would like to delete: ")
     return service.del_record(id)
 
+# defining a function for when a user selects option 6
+def del_all_records():
+    choice = input("Are you sure you want to delete all the records in Phone Tool? Yes or No: ")
+    if choice == "yes":
+        print("All records have been deleted")
+        return service.del_all()
+    else:
+        return "No records deleted."
+
 # menu displayed when requests are made to the db
 menu = (
     """
@@ -69,10 +80,12 @@ menu = (
     3. Read one record by id number
     4. Update a record by id number
     5. Delete one record by id number
-    6. Exit
+    6. Delete all records in the table 
+    7. Exit
     """
 )
 
+# function that is defined so that the table updates whenever a change is made via CRUD requests
 def confirm_update():
     return service.update_db()
 
