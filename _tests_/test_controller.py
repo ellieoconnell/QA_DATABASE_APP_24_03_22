@@ -25,4 +25,3 @@ def test_inputRecord(mocker):
 
     # providing the assumption about what I want the result of the testing to be 
     assert result == test_proven
-
