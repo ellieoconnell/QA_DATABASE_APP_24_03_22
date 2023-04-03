@@ -4,7 +4,7 @@
 # it is best to use a test_db for th
 
 # importing the controller and service files for testing
-from controller import * 
+import service
 from service import *
 
 # creating the testing function to test the record creation function 
