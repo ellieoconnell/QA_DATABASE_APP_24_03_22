@@ -4,8 +4,7 @@
 # it is best to use a test_db for th
 
 # importing the controller and service files for testing
-import service
-from service import *
+import application.service as service
 
 # creating the testing function to test the record creation function 
 def test_inputRecord(mocker):
