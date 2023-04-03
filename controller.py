@@ -1,3 +1,9 @@
+# the controller files acts as the API for the application and 
+# represents that content that will be presented in the terminal
+
+
+# importing the service and database file to use the functions
+# importing the sys module 
 import service
 import database
 import sys

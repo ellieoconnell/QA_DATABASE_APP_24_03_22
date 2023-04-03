@@ -1,3 +1,6 @@
+# the service file contains all the functions for each query option the app can query ont the database
+
+# importing the database file so the functions can be referenced 
 import database
 
 # defining the get all function by pulling the function from the db file 

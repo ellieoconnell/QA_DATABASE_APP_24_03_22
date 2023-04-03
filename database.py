@@ -1,3 +1,6 @@
+# the database file contains all the functions that creates the database and connects to it so queries can be run
+
+# importing the sqlite3 module 
 import sqlite3 as sql 
 
 # creating the connection to the SQL table and defining the cursor to navigate through the db table
