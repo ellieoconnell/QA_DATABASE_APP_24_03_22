@@ -38,8 +38,3 @@ def del_all():
     query = "DELETE FROM phonetool WHERE user_id_no > 0;"
     database.run_query(query)
     return "All data on the table has been deleted"
-
-# defining a function that updates the database table everytime a change is made
-def update_db():
-    print("Table has been updated")
-    return database.commit_changes()

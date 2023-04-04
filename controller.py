@@ -93,6 +93,6 @@ menu = (
 
 # function that is defined so that the table updates whenever a change is made via CRUD requests
 def confirm_update():
-    return service.update_db()
+    return database.commit_changes()
 
 start_app()
