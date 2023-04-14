@@ -1,7 +1,6 @@
 # the controller files acts as the API for the application and 
 # represents that content that will be presented in the terminal
 
-
 # importing the service and database file to use the functions
 # importing the sys module 
 import service
@@ -27,7 +26,6 @@ def start_app():
         if choice == "6":
             print(del_all_records())
         if choice == "7":
-            confirm_update()
             database.commit_changes()
             sys.exit("Goodbye for now!")
 
@@ -90,9 +88,5 @@ menu = (
     7. Exit
     """
 )
-
-# function that is defined so that the table updates whenever a change is made via CRUD requests
-def confirm_update():
-    return database.commit_changes()
 
 start_app()
