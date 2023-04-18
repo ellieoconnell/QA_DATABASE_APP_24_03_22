@@ -6,9 +6,9 @@ This is a simple application created for a QA Apprenticeship assignment that run
 
 The app is designed to:
 
-diplay all the data currently in the table
-input new data
-change current records
-read one record via ID
-delete one record via ID
+display all the data currently in the table,
+input new data,
+change current records,
+read one record via ID,
+delete one record via ID and
 delete all records
