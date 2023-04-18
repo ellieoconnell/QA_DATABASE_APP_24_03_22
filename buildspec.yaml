@@ -8,13 +8,13 @@ phases:
     - echo Installing pip and pytest...
     - pip install --upgrade pip
     - pip install pytest 
-  pre-build:
+  pre_build:
     commands:
     - echo Nothing to install in the pre-build phase...
   build:
     commands:
     - echo Build started on `date`
     - echo Building...
-  post-build:
+  post_build:
     commands:
     - echo Build complete on `date`!
