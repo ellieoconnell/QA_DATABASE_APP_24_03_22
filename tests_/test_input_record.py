@@ -23,4 +23,4 @@ def test_inputRecord(mocker):
     result = create_single_record(test_alias, test_first_name, test_last_name, test_email_address, test_employee_level, test_years_of_employment, test_in_the_AI2_program)
 
     # providing the assumption about what I want the result of the testing to be 
-    assert result == test_proven
+    assert result == "The new employee has been recorded!"
