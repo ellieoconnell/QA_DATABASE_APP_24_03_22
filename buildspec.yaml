@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+    - echo Installing pip and pytest...
+    - pip install --upgrade pip
+    - pip install pytest 
+  pre_build:
+    commands:
+    - echo Nothing to install in the pre-build phase...
+  build:
+    commands:
+    - echo Build started on `date`
+    - echo Building...
+  post_build:
+    commands:
+    - echo Build complete on `date`!
